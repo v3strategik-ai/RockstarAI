@@ -18,34 +18,33 @@ export default function HomePage() {
       {/* Hero Section */}
       <section className="relative px-4 sm:px-6 lg:px-8 pt-20 pb-32">
         <div className="max-w-7xl mx-auto text-center">
-          {/* Hero Title */}
-          <div className="mb-8">
+          {/* Professional Hero Title */}
+          <div className="mb-8 animate-slide-up">
             <h1 className="text-6xl sm:text-7xl lg:text-8xl font-bold mb-6">
-              <span className="text-neon-blue neon-text animate-glow">APEX</span>
-              <span className="text-neon-green neon-text ml-4">AI</span>
+              <span className="text-apex-blue apex-text animate-glow-subtle">APEX</span>
+              <span className="text-apex-accent ml-4 font-semibold">AI</span>
             </h1>
-            <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 mb-8 max-w-4xl mx-auto">
+            <p className="text-xl sm:text-2xl lg:text-3xl text-gray-300 mb-8 max-w-4xl mx-auto leading-relaxed">
               Advanced Personal Executive Assistant That 
-              <span className="text-neon-green font-bold"> Autonomously</span> Manages Your Business
+              <span className="text-apex-accent font-semibold"> Intelligently</span> Manages Your Enterprise
             </p>
           </div>
 
-          {/* APEX AI Logo */}
+          {/* Professional APEX AI Logo */}
           <div className="mb-12 relative">
             <div className="w-48 h-48 mx-auto relative">
-              <div className="w-full h-full bg-gradient-to-br from-neon-blue via-neon-purple to-neon-green rounded-full flex items-center justify-center animate-pulse-neon">
-                <div className="text-8xl font-bold text-black">A</div>
+              <div className="w-full h-full bg-gradient-to-br from-apex-blue to-apex-blue-light rounded-2xl flex items-center justify-center animate-pulse-professional shadow-apex-glow-strong">
+                <div className="text-6xl font-bold text-white">A</div>
               </div>
-              {/* RGB Glow Effect Overlay */}
-              <div className="absolute inset-0 bg-gradient-to-r from-blue-500/20 via-purple-500/20 to-green-500/20 rounded-full blur-2xl animate-pulse" />
-              <div className="absolute inset-0 border-4 border-gradient-to-r from-neon-blue to-neon-green rounded-full opacity-50" />
+              {/* Professional glow overlay */}
+              <div className="absolute inset-0 bg-gradient-to-r from-apex-blue/10 to-apex-teal/10 rounded-2xl blur-xl animate-pulse-professional" />
             </div>
             
             {/* Brand Text */}
             <div className="mt-8 text-center">
-              <div className="text-4xl font-bold text-neon-blue neon-text mb-2 animate-glow">APEX</div>
-              <div className="text-3xl font-bold text-neon-green neon-text">AI</div>
-              <div className="text-sm text-gray-400 mt-2">Advanced Personal Executive Assistant</div>
+              <div className="text-4xl font-bold text-apex-blue apex-text mb-2 animate-glow-subtle">APEX</div>
+              <div className="text-3xl font-semibold text-apex-accent">AI</div>
+              <div className="text-sm text-gray-400 mt-2 font-medium">Advanced Personal Executive Assistant</div>
             </div>
           </div>
 
@@ -59,47 +58,54 @@ export default function HomePage() {
             <div className="absolute inset-0 rounded-2xl bg-gradient-to-t from-rockstar-dark/50 to-transparent" />
           </div>
 
-          {/* CTA Buttons */}
+          {/* Professional CTA Buttons */}
           <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mb-16">
-            <Link href="/dashboard" className="px-8 py-4 bg-gradient-to-r from-neon-blue to-neon-green text-black font-bold text-lg rounded-xl hover:shadow-neon-blue transition-all duration-300 transform hover:scale-105">
+            <Link href="/dashboard" className="professional-button px-8 py-4 text-white font-semibold text-lg rounded-xl">
               Get Started Now
             </Link>
-            <Link href="/chat" className="px-8 py-4 border-2 border-neon-blue text-neon-blue font-bold text-lg rounded-xl hover:bg-neon-blue/10 transition-all duration-300 neon-border">
+            <Link href="/chat" className="px-8 py-4 border-2 border-apex-blue text-apex-blue font-semibold text-lg rounded-xl hover:bg-apex-blue/10 transition-all duration-300 apex-border">
               Try AI Assistant
             </Link>
           </div>
 
-          {/* Feature Highlights */}
+          {/* Professional Feature Highlights */}
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                title: "Autonomous Task Execution",
-                description: "AI agents that independently manage workflows, emails, and scheduling",
-                icon: "🤖"
+                title: "Autonomous Execution",
+                description: "AI agents that independently manage workflows, emails, and scheduling with enterprise-grade reliability",
+                icon: "⚙️",
+                color: "apex-blue"
               },
               {
-                title: "Advanced Platform Integration",
-                description: "Deep OAuth integration with Salesforce, Office 365, and 15+ platforms",
-                icon: "🔗"
+                title: "Enterprise Integration",
+                description: "Secure OAuth integration with Salesforce, Office 365, and 15+ business platforms",
+                icon: "🔗",
+                color: "apex-success"
               },
               {
-                title: "Intelligent Learning System",
-                description: "Vector-based knowledge processing with behavior pattern recognition",
-                icon: "🧠"
+                title: "Intelligent Analytics",
+                description: "Advanced behavioral learning with predictive insights and performance optimization",
+                icon: "📊",
+                color: "apex-accent"
               },
               {
-                title: "Multi-Modal Capabilities",
-                description: "Process text, images, documents, and voice with advanced AI models",
-                icon: "⚡"
+                title: "Multi-Modal Processing",
+                description: "Process text, documents, images, and voice with state-of-the-art AI models",
+                icon: "🧠",
+                color: "apex-blue"
               }
             ].map((feature, index) => (
               <div
                 key={index}
-                className="glass-morphism rounded-xl p-6 border border-gray-700 hover:border-neon-blue/50 transition-all duration-500 transform hover:scale-105"
+                className="professional-card rounded-xl p-6 hover:shadow-apex-glow transition-all duration-500 transform hover:scale-105 animate-slide-up"
+                style={{ animationDelay: `${index * 0.1}s` }}
               >
-                <div className="text-4xl mb-4">{feature.icon}</div>
-                <h3 className="text-xl font-bold text-neon-blue mb-2">{feature.title}</h3>
-                <p className="text-gray-300">{feature.description}</p>
+                <div className="text-3xl mb-4">{feature.icon}</div>
+                <h3 className={`text-xl font-semibold mb-3 text-${feature.color}`}>
+                  {feature.title}
+                </h3>
+                <p className="text-gray-300 text-sm leading-relaxed">{feature.description}</p>
               </div>
             ))}
           </div>
@@ -134,17 +140,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-r from-neon-blue/10 to-neon-green/10">
+      {/* Professional CTA Section */}
+      <section className="px-4 sm:px-6 lg:px-8 py-20 bg-gradient-to-r from-apex-blue/5 to-apex-teal/10">
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-4xl sm:text-5xl font-bold text-white mb-6">
-            Ready to Reach Your <span className="text-neon-blue neon-text">APEX</span>?
+            Ready to Reach Your <span className="text-apex-blue apex-text">APEX</span>?
           </h2>
-          <p className="text-xl text-gray-300 mb-8">
-            Join the next generation of executives who leverage autonomous AI for peak performance
+          <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
+            Join forward-thinking executives who leverage intelligent automation for superior business outcomes
           </p>
-          <Link href="/dashboard" className="inline-block px-12 py-4 bg-gradient-to-r from-neon-blue to-neon-green text-black font-bold text-xl rounded-xl hover:shadow-rockstar-glow transition-all duration-300 transform hover:scale-105">
-            Start Your Free Trial
+          <Link href="/dashboard" className="professional-button inline-block px-12 py-4 text-white font-semibold text-xl rounded-xl">
+            Start Your Enterprise Trial
           </Link>
         </div>
       </section>

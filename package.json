@@ -1,6 +1,6 @@
 {
   "name": "apex-ai",
-  "version": "2.0.0",
+  "version": "2.1.0",
   "description": "APEX AI - Advanced Personal Executive Assistant with autonomous capabilities and intelligent platform integrations",
   "private": true,
   "scripts": {
