@@ -9,70 +9,82 @@ export default function IntegrationsPage() {
 
   const integrations = [
     {
-      id: 1,
-      name: 'Salesforce',
-      description: 'Sync customer data, automate lead management, and generate reports',
+      id: 'salesforce',
+      name: 'Salesforce CRM',
+      description: 'Deep CRM integration with autonomous lead management and opportunity tracking',
       category: 'crm',
       status: 'connected',
       icon: '☁️',
-      features: ['Lead Scoring', 'Auto Data Entry', 'Report Generation'],
+      features: ['Autonomous Lead Scoring', 'Opportunity Tracking', 'Account Sync', 'Workflow Automation'],
       setupTime: '5 min',
-      popularity: 95
+      popularity: 95,
+      oauth: true,
+      capabilities: 7
     },
     {
-      id: 2,
+      id: 'microsoft365',
       name: 'Microsoft Office 365',
-      description: 'Email automation, calendar optimization, and document processing',
+      description: 'Complete Office 365 suite with email intelligence and calendar automation',
       category: 'productivity',
       status: 'available',
       icon: '📧',
-      features: ['Email Draft', 'Calendar Sync', 'Document Analysis'],
+      features: ['Email Intelligence', 'Calendar AI', 'Document Processing', 'Teams Integration'],
       setupTime: '3 min',
-      popularity: 92
+      popularity: 94,
+      oauth: true,
+      capabilities: 7
     },
     {
-      id: 3,
-      name: 'Slack',
-      description: 'Automated responses, meeting summaries, and team communication',
-      category: 'communication',
-      status: 'available',
-      icon: '💬',
-      features: ['Auto Response', 'Meeting Notes', 'Team Analytics'],
-      setupTime: '2 min',
-      popularity: 89
-    },
-    {
-      id: 4,
+      id: 'google_workspace',
       name: 'Google Workspace',
-      description: 'Gmail automation, Drive integration, and calendar management',
+      description: 'Gmail automation, Drive intelligence, and calendar management with AI',
       category: 'productivity',
       status: 'available',
       icon: '🌐',
-      features: ['Gmail Automation', 'Drive Sync', 'Calendar AI'],
+      features: ['Gmail Intelligence', 'Drive Analysis', 'Calendar AI', 'Meet Integration'],
       setupTime: '4 min',
-      popularity: 94
+      popularity: 93,
+      oauth: true,
+      capabilities: 6
     },
     {
-      id: 5,
-      name: 'Zoom',
-      description: 'Meeting transcription, automated scheduling, and follow-up generation',
+      id: 'slack',
+      name: 'Slack Communications',
+      description: 'Intelligent responses, meeting summaries, and team productivity analytics',
+      category: 'communication',
+      status: 'available',
+      icon: '💬',
+      features: ['Auto Response', 'Meeting Summaries', 'Team Analytics', 'Workflow Triggers'],
+      setupTime: '2 min',
+      popularity: 89,
+      oauth: true,
+      capabilities: 6
+    },
+    {
+      id: 'zoom',
+      name: 'Zoom Video Conferencing',
+      description: 'Meeting transcription, automated scheduling, and intelligent follow-ups',
       category: 'communication',
       status: 'available',
       icon: '📹',
-      features: ['Auto Transcription', 'Meeting Prep', 'Follow-up Tasks'],
+      features: ['Meeting Transcription', 'Auto Scheduling', 'Recording Analysis', 'Follow-up Generation'],
       setupTime: '3 min',
-      popularity: 87
+      popularity: 87,
+      oauth: true,
+      capabilities: 6
     },
     {
-      id: 6,
-      name: 'Jira',
-      description: 'Project tracking, automated ticket creation, and sprint planning',
+      id: 'jira',
+      name: 'Jira Project Management',
+      description: 'Automated project tracking, sprint planning, and team performance analytics',
       category: 'project-management',
       status: 'available',
       icon: '📊',
-      features: ['Ticket Auto-creation', 'Sprint Planning', 'Progress Reports'],
+      features: ['Auto Ticket Creation', 'Sprint Planning', 'Progress Analytics', 'Team Performance'],
       setupTime: '6 min',
-      popularity: 83
+      popularity: 83,
+      oauth: true,
+      capabilities: 6
     }
   ]
 
@@ -97,11 +109,36 @@ export default function IntegrationsPage() {
   const connectedCount = Object.keys(connections).filter(key => connections[key]).length
   const availableCount = integrations.length - connectedCount
 
-  const handleConnect = (id: number) => {
-    setConnections(prev => ({
-      ...prev,
-      [id]: !prev[id]
-    }))
+  const handleConnect = async (id: string) => {
+    try {
+      if (connections[id]) {
+        // Disconnect
+        const response = await fetch('/api/integrations', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ integration_id: id, action: 'disconnect' })
+        })
+        
+        if (response.ok) {
+          setConnections(prev => ({ ...prev, [id]: false }))
+        }
+      } else {
+        // Connect - initiate OAuth flow
+        const response = await fetch('/api/integrations', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ integration_id: id, action: 'connect' })
+        })
+        
+        const data = await response.json()
+        if (data.success && data.auth_url) {
+          // Redirect to OAuth URL
+          window.location.href = data.auth_url
+        }
+      }
+    } catch (error) {
+      console.error('Integration error:', error)
+    }
   }
 
   if (!mounted) return null
@@ -112,10 +149,10 @@ export default function IntegrationsPage() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-neon-blue neon-text mb-2">
-            Integrations
+            Platform Integrations
           </h1>
           <p className="text-gray-300">
-            Connect RockstarAI with your favorite tools and platforms to supercharge your workflow.
+            Connect APEX AI with your business platforms through secure OAuth flows for autonomous operation.
           </p>
         </div>
 
@@ -209,20 +246,15 @@ export default function IntegrationsPage() {
                     </div>
                   </div>
                   
-                  {/* Popularity Badge */}
+                  {/* OAuth & Capabilities Badge */}
                   <div className="text-right">
-                    <div className="text-xs text-gray-400 mb-1">Popularity</div>
-                    <div className="flex items-center space-x-1">
-                      <div className="w-12 bg-gray-700 rounded-full h-1">
-                        <div 
-                          className={`h-1 rounded-full ${
-                            integration.popularity >= 90 ? 'bg-neon-green' :
-                            integration.popularity >= 80 ? 'bg-neon-blue' : 'bg-neon-purple'
-                          }`}
-                          style={{ width: `${integration.popularity}%` }}
-                        />
-                      </div>
-                      <span className="text-xs text-gray-400">{integration.popularity}%</span>
+                    <div className="text-xs text-gray-400 mb-1">OAuth Ready</div>
+                    <div className="flex items-center space-x-2 mb-2">
+                      <div className="w-2 h-2 bg-neon-green rounded-full"></div>
+                      <span className="text-xs text-neon-green">Secure</span>
+                    </div>
+                    <div className="text-xs text-gray-400">
+                      {integration.capabilities} capabilities
                     </div>
                   </div>
                 </div>

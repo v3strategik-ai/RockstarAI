@@ -12,14 +12,27 @@ module.exports = {
       colors: {
         background: 'hsl(var(--background))',
         foreground: 'hsl(var(--foreground))',
-        // RockstarAI Custom Colors
-        'neon-blue': '#00bfff',
-        'neon-green': '#00ff88',
-        'neon-purple': '#bf00ff',
-        'neon-pink': '#ff0080',
-        'rockstar-dark': '#0a0a0a',
-        'rockstar-gray': '#1a1a1a',
-        'rockstar-light': '#2a2a2a',
+        // APEX AI Professional Colors - Salesforce Inspired
+        'apex-blue': '#0176d3',
+        'apex-blue-light': '#1b96ff',
+        'apex-blue-dark': '#014486',
+        'apex-teal': '#032d60',
+        'apex-accent': '#ff6b35',
+        'apex-success': '#04844b',
+        'apex-warning': '#ffb75d',
+        'apex-dark': '#080707',
+        'apex-slate': '#16181d',
+        'apex-gray': '#243238',
+        'apex-light': '#394b53',
+        'apex-border': '#3e5389',
+        // Legacy support
+        'neon-blue': '#0176d3',
+        'neon-green': '#04844b',
+        'neon-purple': '#5867dd',
+        'neon-pink': '#ff6b35',
+        'rockstar-dark': '#080707',
+        'rockstar-gray': '#16181d',
+        'rockstar-light': '#243238',
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
@@ -27,23 +40,29 @@ module.exports = {
         'neon-glow': 'linear-gradient(45deg, #00bfff, #00ff88, #bf00ff)',
       },
       boxShadow: {
-        'neon-blue': '0 0 20px #00bfff, 0 0 40px #00bfff, 0 0 60px #00bfff',
-        'neon-green': '0 0 20px #00ff88, 0 0 40px #00ff88, 0 0 60px #00ff88',
-        'neon-purple': '0 0 20px #bf00ff, 0 0 40px #bf00ff, 0 0 60px #bf00ff',
-        'rockstar-glow': '0 0 30px rgba(0, 191, 255, 0.3), 0 0 60px rgba(0, 255, 136, 0.2)',
+        'apex-glow': '0 0 20px rgba(1, 118, 211, 0.3)',
+        'apex-glow-strong': '0 0 30px rgba(1, 118, 211, 0.5), 0 0 60px rgba(1, 118, 211, 0.3)',
+        'apex-success': '0 0 20px rgba(4, 132, 75, 0.3)',
+        'apex-accent': '0 0 20px rgba(255, 107, 53, 0.3)',
+        'professional': '0 10px 25px rgba(0, 0, 0, 0.15), 0 4px 10px rgba(0, 0, 0, 0.1)',
       },
       animation: {
-        'pulse-neon': 'pulse-neon 2s ease-in-out infinite alternate',
-        'glow': 'glow 2s ease-in-out infinite alternate',
+        'pulse-professional': 'pulse-professional 3s ease-in-out infinite',
+        'glow-subtle': 'glow-subtle 2s ease-in-out infinite alternate',
+        'slide-up': 'slide-up 0.5s ease-out',
       },
       keyframes: {
-        'pulse-neon': {
-          '0%': { boxShadow: '0 0 20px #00bfff' },
-          '100%': { boxShadow: '0 0 20px #00bfff, 0 0 40px #00bfff, 0 0 60px #00bfff' },
+        'pulse-professional': {
+          '0%, 100%': { boxShadow: '0 0 20px rgba(1, 118, 211, 0.2)' },
+          '50%': { boxShadow: '0 0 30px rgba(1, 118, 211, 0.4)' },
         },
-        'glow': {
-          '0%': { textShadow: '0 0 10px #00bfff' },
-          '100%': { textShadow: '0 0 10px #00bfff, 0 0 20px #00bfff, 0 0 30px #00bfff' },
+        'glow-subtle': {
+          '0%': { textShadow: '0 0 10px rgba(1, 118, 211, 0.3)' },
+          '100%': { textShadow: '0 0 15px rgba(1, 118, 211, 0.5)' },
+        },
+        'slide-up': {
+          '0%': { transform: 'translateY(20px)', opacity: '0' },
+          '100%': { transform: 'translateY(0)', opacity: '1' },
         },
       },
     },
