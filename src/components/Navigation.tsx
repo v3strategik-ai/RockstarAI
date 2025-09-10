@@ -24,16 +24,13 @@ export function Navigation() {
           {/* Logo */}
           <Link href="/" className="flex items-center space-x-3 group">
             <div className="relative w-10 h-10">
-              <Image
-                src="/rockstar-logo.png"
-                alt="RockstarAI Logo"
-                fill
-                className="object-contain group-hover:animate-pulse-neon"
-              />
+              <div className="w-full h-full bg-gradient-to-br from-neon-blue via-neon-purple to-neon-green rounded-full flex items-center justify-center group-hover:animate-pulse-neon">
+                <div className="text-xl font-bold text-black">A</div>
+              </div>
             </div>
             <div className="flex items-center space-x-2">
               <span className="text-xl font-bold text-neon-blue neon-text group-hover:animate-glow">
-                ROCKSTAR
+                APEX
               </span>
               <span className="text-lg font-bold text-neon-green neon-text">
                 AI

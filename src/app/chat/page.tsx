@@ -15,7 +15,7 @@ export default function ChatPage() {
     {
       id: '1',
       type: 'assistant',
-      content: "Hello! I'm your RockstarAI assistant. I've learned from your knowledge base and I'm ready to help you with tasks, answer questions, and automate your workflow. What would you like to work on today?",
+      content: "Hello! I'm APEX AI, your Advanced Personal Executive Assistant. I have autonomous capabilities and deep integration with your business platforms. I can independently execute workflows, analyze patterns, and make intelligent decisions. What would you like me to manage for you today?",
       timestamp: new Date()
     }
   ])
@@ -119,10 +119,10 @@ export default function ChatPage() {
   }
 
   const quickActions = [
-    { label: 'Draft Email', icon: '📧', action: () => setInputValue('Help me draft a professional email') },
-    { label: 'Schedule Meeting', icon: '📅', action: () => setInputValue('Help me prepare for an upcoming meeting') },
-    { label: 'Create Report', icon: '📊', action: () => setInputValue('Help me create a comprehensive report') },
-    { label: 'Organize Tasks', icon: '✅', action: () => setInputValue('Help me prioritize and organize my tasks') }
+    { label: 'Autonomous Email', icon: '📧', action: () => setInputValue('Execute autonomous email management for my inbox') },
+    { label: 'Meeting Intelligence', icon: '📅', action: () => setInputValue('Set up autonomous meeting orchestration with AI preparation') },
+    { label: 'Predictive Analytics', icon: '📊', action: () => setInputValue('Generate predictive business analytics with actionable insights') },
+    { label: 'Workflow Automation', icon: '⚡', action: () => setInputValue('Design autonomous workflows across my integrated platforms') }
   ]
 
   if (!mounted) return null
@@ -133,10 +133,10 @@ export default function ChatPage() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-neon-blue neon-text mb-2">
-            AI Assistant
+            APEX AI Assistant
           </h1>
           <p className="text-gray-300">
-            Chat with your personalized AI assistant that knows your work style and preferences.
+            Interact with your autonomous AI executive assistant with advanced reasoning and platform integration.
           </p>
         </div>
 
@@ -150,14 +150,14 @@ export default function ChatPage() {
                   <span className="text-2xl">🤖</span>
                 </div>
                 <div>
-                  <h3 className="font-bold text-white">RockstarAI Assistant</h3>
-                  <p className="text-sm text-gray-400">Online • Trained on your knowledge base</p>
+                  <h3 className="font-bold text-white">APEX AI Assistant</h3>
+                  <p className="text-sm text-gray-400">Online • Autonomous execution enabled</p>
                 </div>
               </div>
               
               <div className="flex items-center space-x-2">
                 <div className="w-2 h-2 bg-neon-green rounded-full animate-pulse"></div>
-                <span className="text-xs text-gray-400">Learning actively</span>
+                <span className="text-xs text-gray-400">Executing autonomously</span>
               </div>
             </div>
           </div>
@@ -264,12 +264,12 @@ export default function ChatPage() {
             
             <div className="flex items-center justify-between mt-3 text-xs text-gray-500">
               <div className="flex items-center space-x-4">
-                <span>📎 Attach files</span>
-                <span>🎤 Voice input</span>
-                <span>📋 Paste data</span>
+                <span>📎 Multi-modal input</span>
+                <span>🎤 Voice commands</span>
+                <span>📋 Live platform data</span>
               </div>
               <div>
-                AI trained on {Math.floor(Math.random() * 500) + 1000} documents
+                Autonomous AI • {Math.floor(Math.random() * 500) + 1500} patterns learned
               </div>
             </div>
           </div>

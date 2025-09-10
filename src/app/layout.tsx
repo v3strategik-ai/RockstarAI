@@ -3,9 +3,9 @@ import './globals.css'
 import { Navigation } from '@/components/Navigation'
 
 export const metadata: Metadata = {
-  title: 'RockstarAI - Your AI Digital Employee',
-  description: 'Intelligent automation platform that learns from your work patterns and makes you look like a rockstar at your company.',
-  keywords: ['AI', 'automation', 'productivity', 'digital employee', 'workflow'],
+  title: 'APEX AI - Advanced Personal Executive Assistant',
+  description: 'Autonomous AI assistant that integrates with all your business platforms, learns from your behavior, and executes tasks intelligently.',
+  keywords: ['AI', 'automation', 'productivity', 'executive assistant', 'workflow', 'autonomous', 'intelligent', 'business platforms'],
 }
 
 export default function RootLayout({

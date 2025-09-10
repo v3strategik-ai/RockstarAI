@@ -27,35 +27,43 @@ export default function DashboardPage() {
 
   const recentActivities = [
     {
-      type: 'automation',
-      title: 'Email responses automated',
-      description: 'Handled 12 customer inquiries automatically',
-      time: '2 minutes ago',
-      icon: '📧',
+      type: 'autonomous',
+      title: 'Autonomous workflow executed',
+      description: 'Processed 23 leads, scheduled 8 follow-ups, updated CRM records',
+      time: '3 minutes ago',
+      icon: '🤖',
       status: 'success'
     },
     {
       type: 'integration',
-      title: 'Salesforce sync completed',
-      description: 'Updated 45 customer records',
-      time: '15 minutes ago',
-      icon: '🔄',
+      title: 'Multi-platform sync completed',
+      description: 'Synchronized data across Salesforce, Office 365, and Slack',
+      time: '12 minutes ago',
+      icon: '🔗',
       status: 'success'
     },
     {
-      type: 'learning',
-      title: 'Knowledge base updated',
-      description: 'Processed 3 new documents',
-      time: '1 hour ago',
-      icon: '📚',
+      type: 'intelligence',
+      title: 'Behavioral pattern learned',
+      description: 'Identified optimal meeting scheduling preferences',
+      time: '25 minutes ago',
+      icon: '🧠',
       status: 'processing'
     },
     {
-      type: 'task',
-      title: 'Meeting preparation completed',
-      description: 'Generated agenda and talking points for 3pm meeting',
+      type: 'prediction',
+      title: 'Predictive analysis generated',
+      description: 'Forecasted Q1 performance and identified 3 key opportunities',
+      time: '1 hour ago',
+      icon: '📊',
+      status: 'success'
+    },
+    {
+      type: 'automation',
+      title: 'Email intelligence activated',
+      description: 'Automated 15 personalized responses matching your communication style',
       time: '2 hours ago',
-      icon: '📋',
+      icon: '📧',
       status: 'success'
     }
   ]
@@ -68,10 +76,10 @@ export default function DashboardPage() {
         {/* Header */}
         <div className="mb-8">
           <h1 className="text-4xl font-bold text-neon-blue neon-text mb-2">
-            Dashboard
+            APEX AI Dashboard
           </h1>
           <p className="text-gray-300">
-            Welcome back! Here's what your AI has been up to.
+            Welcome back! Your Advanced Personal Executive Assistant has been working autonomously.
           </p>
         </div>
 
@@ -165,69 +173,86 @@ export default function DashboardPage() {
           <div className="space-y-6">
             {/* AI Status */}
             <div className="glass-morphism rounded-xl p-6 border border-gray-700">
-              <h3 className="text-xl font-bold text-neon-blue mb-4">AI Status</h3>
+              <h3 className="text-xl font-bold text-neon-blue mb-4">APEX AI Status</h3>
               <div className="space-y-4">
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-300">Learning Progress</span>
+                  <span className="text-gray-300">Behavioral Learning</span>
                   <div className="flex items-center space-x-2">
                     <div className="w-20 bg-gray-700 rounded-full h-2">
-                      <div className="bg-neon-green h-2 rounded-full animate-pulse" style={{ width: '78%' }}></div>
+                      <div className="bg-neon-green h-2 rounded-full animate-pulse" style={{ width: '89%' }}></div>
                     </div>
-                    <span className="text-neon-green text-sm font-bold">78%</span>
+                    <span className="text-neon-green text-sm font-bold">89%</span>
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-300">Integration Health</span>
+                  <span className="text-gray-300">Platform Integrations</span>
                   <div className="flex items-center space-x-2">
                     <div className="w-20 bg-gray-700 rounded-full h-2">
-                      <div className="bg-neon-blue h-2 rounded-full animate-pulse" style={{ width: '92%' }}></div>
+                      <div className="bg-neon-blue h-2 rounded-full animate-pulse" style={{ width: '95%' }}></div>
                     </div>
-                    <span className="text-neon-blue text-sm font-bold">92%</span>
+                    <span className="text-neon-blue text-sm font-bold">95%</span>
                   </div>
                 </div>
                 <div className="flex items-center justify-between">
-                  <span className="text-gray-300">Performance</span>
+                  <span className="text-gray-300">Autonomous Execution</span>
                   <div className="flex items-center space-x-2">
                     <div className="w-20 bg-gray-700 rounded-full h-2">
-                      <div className="bg-neon-purple h-2 rounded-full animate-pulse" style={{ width: '94%' }}></div>
+                      <div className="bg-neon-purple h-2 rounded-full animate-pulse" style={{ width: '97%' }}></div>
                     </div>
-                    <span className="text-neon-purple text-sm font-bold">94%</span>
+                    <span className="text-neon-purple text-sm font-bold">97%</span>
+                  </div>
+                </div>
+                <div className="flex items-center justify-between">
+                  <span className="text-gray-300">Predictive Accuracy</span>
+                  <div className="flex items-center space-x-2">
+                    <div className="w-20 bg-gray-700 rounded-full h-2">
+                      <div className="bg-neon-pink h-2 rounded-full animate-pulse" style={{ width: '91%' }}></div>
+                    </div>
+                    <span className="text-neon-pink text-sm font-bold">91%</span>
                   </div>
                 </div>
               </div>
               <div className="mt-4 p-3 bg-neon-green/10 rounded-lg border border-neon-green/30">
                 <div className="flex items-center space-x-2">
                   <div className="w-2 h-2 bg-neon-green rounded-full animate-pulse"></div>
-                  <span className="text-neon-green text-sm font-semibold">AI is actively learning</span>
+                  <span className="text-neon-green text-sm font-semibold">Autonomous execution active</span>
                 </div>
               </div>
             </div>
 
-            {/* Quick Actions */}
+            {/* Autonomous Actions */}
             <div className="glass-morphism rounded-xl p-6 border border-gray-700">
-              <h3 className="text-xl font-bold text-neon-purple mb-4">Quick Actions</h3>
+              <h3 className="text-xl font-bold text-neon-purple mb-4">Autonomous Controls</h3>
               <div className="space-y-3">
                 <button className="w-full flex items-center space-x-3 p-3 rounded-lg bg-neon-blue/10 border border-neon-blue/30 hover:border-neon-blue transition-all text-left">
-                  <span className="text-xl">📚</span>
+                  <span className="text-xl">🧠</span>
                   <div>
-                    <div className="font-semibold text-neon-blue">Add Knowledge</div>
-                    <div className="text-xs text-gray-400">Upload documents</div>
+                    <div className="font-semibold text-neon-blue">Train AI</div>
+                    <div className="text-xs text-gray-400">Upload knowledge</div>
                   </div>
                 </button>
                 
                 <button className="w-full flex items-center space-x-3 p-3 rounded-lg bg-neon-green/10 border border-neon-green/30 hover:border-neon-green transition-all text-left">
-                  <span className="text-xl">🔗</span>
+                  <span className="text-xl">⚙️</span>
                   <div>
-                    <div className="font-semibold text-neon-green">Connect Apps</div>
-                    <div className="text-xs text-gray-400">Add integrations</div>
+                    <div className="font-semibold text-neon-green">Configure Agent</div>
+                    <div className="text-xs text-gray-400">Customize behavior</div>
                   </div>
                 </button>
                 
                 <button className="w-full flex items-center space-x-3 p-3 rounded-lg bg-neon-purple/10 border border-neon-purple/30 hover:border-neon-purple transition-all text-left">
-                  <span className="text-xl">💬</span>
+                  <span className="text-xl">📊</span>
                   <div>
-                    <div className="font-semibold text-neon-purple">AI Chat</div>
-                    <div className="text-xs text-gray-400">Get assistance</div>
+                    <div className="font-semibold text-neon-purple">Analytics</div>
+                    <div className="text-xs text-gray-400">View insights</div>
+                  </div>
+                </button>
+                
+                <button className="w-full flex items-center space-x-3 p-3 rounded-lg bg-neon-pink/10 border border-neon-pink/30 hover:border-neon-pink transition-all text-left">
+                  <span className="text-xl">🔄</span>
+                  <div>
+                    <div className="font-semibold text-neon-pink">Auto Workflows</div>
+                    <div className="text-xs text-gray-400">Manage automation</div>
                   </div>
                 </button>
               </div>
